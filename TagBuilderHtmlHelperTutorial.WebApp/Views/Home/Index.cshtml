@@ -1,4 +1,7 @@
-﻿@{
+﻿@using Techeasy.Framework.Web.Mvc
+@using Techeasy.Framework.Web.Mvc.Bootstrap
+@using Techeasy.TagBuilderHtmlHelperTutorial.WebApp.HtmlHelpers
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -9,6 +12,20 @@
 </div>
 
 <div class="row">
+    @Html.SpanTag().SetAttribute("style", "white-space: pre-line").SetInnerText("SpanTag")
+    @Html.TextInputTag()<br/>
+    @Html.CheckboxInputTag()<br/>
+    @Html.DateInputTag().AddCssClass("form-control").SetValueAttribute(DateTime.Now.ToString("yyyy-MM-dd"))<br/>
+
+    @Html.ActionAnchorButtonHtmlTag("/").SetInnerText("ActionAnchorButtonHtmlTag")<br/>
+
+    @Html.ModifyActionAnchorButtonHtmlTag("/", ContentDisplayMode.Icon)<br/>
+    @Html.RemoveActionAnchorButtonHtmlTag("/", ContentDisplayMode.Icon)<br/>
+    @Html.BackActionAnchorButtonHtmlTag("/", ContentDisplayMode.Icon)<br/>
+    @Html.ListActionAnchorButtonHtmlTag("/", "List")<br/>
+
+    @Html.SaveActionSubmitButtonHtmlTag()<br/>
+
     <div class="col-md-4">
         <h2>Getting started</h2>
         <p>
@@ -16,16 +33,19 @@
             enables a clean separation of concerns and gives you full control over markup
             for enjoyable, agile development.
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a>
+        </p>
     </div>
     <div class="col-md-4">
         <h2>Get more libraries</h2>
         <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a>
+        </p>
     </div>
     <div class="col-md-4">
         <h2>Web Hosting</h2>
         <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a>
+        </p>
     </div>
 </div>
