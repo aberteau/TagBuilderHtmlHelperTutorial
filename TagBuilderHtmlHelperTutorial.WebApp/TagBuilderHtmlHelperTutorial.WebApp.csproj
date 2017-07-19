@@ -125,6 +125,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HtmlHelpers\ContentDisplayMode.cs" />
+    <Compile Include="HtmlHelpers\HtmlHelperExtensions.cs" />
+    <Compile Include="HtmlHelpers\HtmlTagExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -184,6 +187,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Framework.Web.Mvc\Framework.Web.Mvc.csproj">
+      <Project>{DE9415B5-61AA-45A5-9201-C8504410694E}</Project>
+      <Name>Framework.Web.Mvc</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
