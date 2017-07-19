@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagBuilderHtmlHelperTutorial.WebApp", "TagBuilderHtmlHelperTutorial.WebApp\TagBuilderHtmlHelperTutorial.WebApp.csproj", "{2D5F94D9-622E-4C99-9C81-604DA6011368}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Web.Mvc", "Framework.Web.Mvc\Framework.Web.Mvc.csproj", "{DE9415B5-61AA-45A5-9201-C8504410694E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2D5F94D9-622E-4C99-9C81-604DA6011368}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D5F94D9-622E-4C99-9C81-604DA6011368}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D5F94D9-622E-4C99-9C81-604DA6011368}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE9415B5-61AA-45A5-9201-C8504410694E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE9415B5-61AA-45A5-9201-C8504410694E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE9415B5-61AA-45A5-9201-C8504410694E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE9415B5-61AA-45A5-9201-C8504410694E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
