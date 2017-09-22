@@ -12,19 +12,19 @@ namespace Techeasy.TagBuilderHtmlHelperTutorial.WebApp.HtmlHelpers
     {
         public static HtmlTag SaveActionSubmitButtonHtmlTag(this HtmlHelper helper)
         {
-            return helper.ActionButtonHtmlTag().SetTypeAttribute("submit").SetInnerText("Enregistrer");
+            return helper.ButtonHtmlTag().SetTypeAttribute("submit").SetInnerText("Enregistrer");
         }
 
         public static HtmlTag AnchorButtonHtmlTag(this HtmlHelper helper, string href, HtmlTag iconTag, String text, ContentDisplayMode contentDisplayMode)
         {
-            HtmlTag tag = helper.ActionAnchorButtonHtmlTag(href);
+            HtmlTag tag = helper.AnchorButtonHtmlTag(href);
             tag.SetInnerHtml(iconTag, text, contentDisplayMode);
             return tag;
         }
 
         public static HtmlTag ActionButtonHtmlTag(this HtmlHelper helper, HtmlTag iconTag, String text, ContentDisplayMode contentDisplayMode)
         {
-            HtmlTag tag = helper.ActionButtonHtmlTag();
+            HtmlTag tag = helper.ButtonHtmlTag();
             tag.SetInnerHtml(iconTag, text, contentDisplayMode);
             return tag;
         }

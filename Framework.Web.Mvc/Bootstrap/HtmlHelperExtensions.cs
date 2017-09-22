@@ -78,14 +78,14 @@ namespace Techeasy.Framework.Web.Mvc.Bootstrap
 
         #endregion
 
-        public static HtmlTag ActionAnchorButtonHtmlTag(this HtmlHelper helper, string href)
+        public static HtmlTag AnchorButtonHtmlTag(this HtmlHelper helper, string href)
         {
             HtmlTag tag = helper.HtmlTag("a");
             tag.AddCssClass("btn btn-default").SetAttribute("role", "button").SetAttribute("href", href);
             return tag;
         }
 
-        public static HtmlTag ActionButtonHtmlTag(this HtmlHelper helper)
+        public static HtmlTag ButtonHtmlTag(this HtmlHelper helper)
         {
             HtmlTag tag = helper.HtmlTag("button");
             tag.AddCssClass("btn btn-default");
