@@ -13,12 +13,27 @@
     @Html.DateInputTag().AddCssClass("form-control").SetValueAttribute(DateTime.Now.ToString("yyyy-MM-dd"))<br/>
 
     @Html.AnchorButtonHtmlTag("/").SetInnerText("AnchorButtonHtmlTag")<br/>
+    @Html.AnchorButtonHtmlTag("/", "Primary", ButtonStyle.Primary)<br />
+    @Html.AnchorButtonHtmlTag("/", "Info", ButtonStyle.Info)<br />
+    @Html.AnchorButtonHtmlTag("/", "Success", ButtonStyle.Success)<br />
+    @Html.AnchorButtonHtmlTag("/", "Warning", ButtonStyle.Warning)<br />
+    @Html.AnchorButtonHtmlTag("/", "Danger", ButtonStyle.Danger)<br />
 
-    @Html.ModifyActionAnchorButtonHtmlTag("/", ContentDisplayMode.Icon)<br/>
-    @Html.RemoveActionAnchorButtonHtmlTag("/", ContentDisplayMode.Icon)<br/>
-    @Html.BackActionAnchorButtonHtmlTag("/", ContentDisplayMode.Icon)<br/>
+    @Html.ModifyActionAnchorButtonHtmlTag("/")<br/>
+    @Html.RemoveActionAnchorButtonHtmlTag("/")<br/>
+    @Html.BackActionAnchorButtonHtmlTag("/")<br/>
     @Html.ListActionAnchorButtonHtmlTag("/", "List")<br/>
 
     @Html.SaveActionSubmitButtonHtmlTag()<br/>
 
 </div>
+
+@section scripts
+{
+    <script type="text/javascript">
+
+        $(function() {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+}
