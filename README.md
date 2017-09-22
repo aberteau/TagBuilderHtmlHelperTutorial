@@ -1,4 +1,4 @@
-# Project Title
+# TagBuilder HtmlHelper Tutorial
 
 This solution contains the code used in the tutorial [Create HTML Helpers using the TagBuilder class](https://amaelberteau.com/tuto/create-html-helpers-using-tagbuilder)
 
@@ -9,7 +9,7 @@ Visual Studio
 
 ## Authors
 
-* **Amael BERTEAU** - *Initial work* 
+* **Amael BERTEAU**
 
 ## License
 
