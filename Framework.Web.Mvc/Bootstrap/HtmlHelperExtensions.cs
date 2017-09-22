@@ -4,6 +4,8 @@ namespace Techeasy.Framework.Web.Mvc.Bootstrap
 {
     public static class HtmlHelperExtensions
     {
+        #region Glyphicon Tags
+
         public static HtmlTag GlyphiconListSpanTag(this HtmlHelper helper)
         {
             HtmlTag tag = helper.HtmlTag("span");
@@ -73,6 +75,8 @@ namespace Techeasy.Framework.Web.Mvc.Bootstrap
             tag.AddCssClass("glyphicon glyphicon-eject");
             return tag;
         }
+
+        #endregion
 
         public static HtmlTag ActionAnchorButtonHtmlTag(this HtmlHelper helper, string href)
         {
