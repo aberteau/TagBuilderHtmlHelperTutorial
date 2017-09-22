@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Bootstrap\ButtonStyle.cs" />
     <Compile Include="Bootstrap\HtmlHelperExtensions.cs" />
+    <Compile Include="Bootstrap\HtmlTagExtensions.cs" />
     <Compile Include="HtmlHelperExtensions.cs" />
     <Compile Include="HtmlTag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
