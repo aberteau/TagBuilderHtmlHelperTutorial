@@ -63,6 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bootstrap\ButtonStyle.cs" />
     <Compile Include="Bootstrap\HtmlHelperExtensions.cs" />
     <Compile Include="HtmlHelperExtensions.cs" />
     <Compile Include="HtmlTag.cs" />

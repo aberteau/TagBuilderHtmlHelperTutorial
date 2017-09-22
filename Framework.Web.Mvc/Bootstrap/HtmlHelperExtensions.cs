@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 
 namespace Techeasy.Framework.Web.Mvc.Bootstrap
 {
@@ -78,18 +79,81 @@ namespace Techeasy.Framework.Web.Mvc.Bootstrap
 
         #endregion
 
-        public static HtmlTag AnchorButtonHtmlTag(this HtmlHelper helper, string href)
+        private static string GetBtnClass(Nullable<ButtonStyle> buttonStyle)
+        {
+            if (buttonStyle.HasValue)
+            {
+                switch (buttonStyle.Value)
+                {
+                    case ButtonStyle.Primary:
+                        return "btn btn-primary";
+                    case ButtonStyle.Secondary:
+                        return "btn btn-secondary";
+                    case ButtonStyle.Success:
+                        return "btn btn-success";
+                    case ButtonStyle.Info:
+                        return "btn btn-info";
+                    case ButtonStyle.Warning:
+                        return "btn btn-warning";
+                    case ButtonStyle.Danger:
+                        return "btn btn-danger";
+                    case ButtonStyle.Link:
+                        return "btn btn-link";
+                }
+            }
+
+            return "btn btn-default";
+        }
+
+        #region AnchorButton Tags
+
+        public static HtmlTag AnchorButtonHtmlTag(this HtmlHelper helper, string href, Nullable<ButtonStyle> buttonStyle = null)
         {
             HtmlTag tag = helper.HtmlTag("a");
-            tag.AddCssClass("btn btn-default").SetAttribute("role", "button").SetAttribute("href", href);
+            string btnClass = GetBtnClass(buttonStyle);
+            tag.AddCssClass(btnClass).SetAttribute("role", "button").SetAttribute("href", href);
             return tag;
         }
 
-        public static HtmlTag ButtonHtmlTag(this HtmlHelper helper)
+        public static HtmlTag AnchorButtonHtmlTag(this HtmlHelper helper, string href, String text, Nullable<ButtonStyle> buttonStyle = null)
         {
-            HtmlTag tag = helper.HtmlTag("button");
-            tag.AddCssClass("btn btn-default");
+            HtmlTag tag = helper.AnchorButtonHtmlTag(href, buttonStyle);
+            tag.SetInnerText(text);
             return tag;
         }
+
+        public static HtmlTag AnchorButtonHtmlTag(this HtmlHelper helper, string href, HtmlTag iconTag, Nullable<ButtonStyle> buttonStyle = null)
+        {
+            HtmlTag tag = helper.AnchorButtonHtmlTag(href, buttonStyle);
+            tag.SetInnerHtml(iconTag);
+            return tag;
+        }
+
+        #endregion
+
+        #region Button Tags
+
+        public static HtmlTag ButtonHtmlTag(this HtmlHelper helper, Nullable<ButtonStyle> buttonStyle = null)
+        {
+            HtmlTag tag = helper.HtmlTag("button");
+            string btnClass = GetBtnClass(buttonStyle);
+            tag.AddCssClass(btnClass);
+            return tag;
+        }
+
+        public static HtmlTag ButtonHtmlTag(this HtmlHelper helper, String text, Nullable<ButtonStyle> buttonStyle = null)
+        {
+            HtmlTag tag = helper.ButtonHtmlTag(buttonStyle);
+            tag.SetInnerHtml(text);
+            return tag;
+        }
+
+        public static HtmlTag ListAnchorButtonHtmlTag(this HtmlHelper helper, string href)
+        {
+            HtmlTag glyphiconSpanTag = helper.GlyphiconListSpanTag();
+            return helper.AnchorButtonHtmlTag(href, glyphiconSpanTag);
+        }
+
+        #endregion
     }
 }
