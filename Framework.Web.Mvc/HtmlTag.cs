@@ -6,14 +6,14 @@ namespace Techeasy.Framework.Web.Mvc
     public class HtmlTag
         : IHtmlString
     {
-        private TagBuilder TagBuilder { get; set; }
+        private readonly TagBuilder _tagBuilder;
 
-        private TagRenderMode RenderMode { get; set; }
+        private readonly TagRenderMode _renderMode;
 
         public HtmlTag(string tagName, TagRenderMode renderMode)
         {
-            TagBuilder = new TagBuilder(tagName);
-            RenderMode = renderMode;
+            _tagBuilder = new TagBuilder(tagName);
+            _renderMode = renderMode;
         }
 
         public HtmlTag(string tagName)
@@ -22,12 +22,12 @@ namespace Techeasy.Framework.Web.Mvc
 
         public string ToHtmlString()
         {
-            return TagBuilder.ToString(RenderMode);
+            return _tagBuilder.ToString(_renderMode);
         }
 
         public HtmlTag SetAttribute(string key, string value)
         {
-            TagBuilder.MergeAttribute(key, value);
+            _tagBuilder.MergeAttribute(key, value);
             return this;
         }
 
@@ -63,27 +63,26 @@ namespace Techeasy.Framework.Web.Mvc
 
         public HtmlTag AddCssClass(string value)
         {
-            TagBuilder.AddCssClass(value);
+            _tagBuilder.AddCssClass(value);
             return this;
         }
 
         public HtmlTag SetInnerHtml(string innerHtml)
         {
-            TagBuilder.InnerHtml = innerHtml;
+            _tagBuilder.InnerHtml = innerHtml;
             return this;
         }
 
         public HtmlTag SetInnerHtml(HtmlTag htmlTag)
         {
-            TagBuilder.InnerHtml = htmlTag.ToHtmlString();
+            _tagBuilder.InnerHtml = htmlTag.ToHtmlString();
             return this;
         }
 
         public HtmlTag SetInnerText(string innerText)
         {
-            TagBuilder.SetInnerText(innerText);
+            _tagBuilder.SetInnerText(innerText);
             return this;
         }
-
     }
 }
